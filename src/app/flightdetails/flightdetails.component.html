@@ -1,0 +1,172 @@
+<mat-toolbar class="header">
+    <span class="css1"></span>
+  </mat-toolbar>
+  <div class="main-body">
+
+      <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Loc" #input>
+      </mat-form-field>
+
+    <div class="table-container">
+      <table id="table" align="center" mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="flightId">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Flight ID</th>
+          <td mat-cell *matCellDef="let row"> {{row.flightId}}</td>
+        </ng-container>
+  
+      
+        <ng-container matColumnDef="departureAirportLocation">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> DepartureAirport Location</th>
+          <td mat-cell *matCellDef="let row"> {{row.departureAirportLocation}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="arrivalAirportLocation">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ArrivalAirport Location </th>
+          <td mat-cell *matCellDef="let row"> {{row.arrivalAirportLocation}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="departureDateTime">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Departure DateTime </th>
+          <td mat-cell *matCellDef="let row"> {{row.departureDateTime}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="arrivalDateTime">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Arrival DateTime </th>
+            <td mat-cell *matCellDef="let row"> {{row.arrivalDateTime}} </td>
+          </ng-container>
+        
+        <ng-container matColumnDef="availableSeats">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Available Seats </th>
+          <td mat-cell *matCellDef="let row"> {{row.availableSeats}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ticketPrice">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Ticket Price </th>
+          <td mat-cell *matCellDef="let row"> {{row.ticketPrice}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+          <td mat-cell *matCellDef="let row">
+
+            <button matTooltip="Edit" matTooltipClass="tooltip" matTooltipPosition="above" mat-icon-button class="edit" color="primary"
+              (click)="openEditForm(row)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            
+            <button matTooltip="Delete" matTooltipClass="tooltip" matTooltipPosition="above" mat-icon-button color="warn"
+              class="delete" (click)="deleteFlight(row.flightId)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+      </table>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<!-- <ng-container matColumnDef="flightId">
+          <th mat-header-cell [hidden]="true" *matHeaderCellDef mat-sort-header> Flight ID </th>
+          <td mat-cell [hidden]="true" *matCellDef="let row"> {{row.flightId}} </td>
+        </ng-container> -->
+  <!-- <mat-paginator [pageSizeOptions]="[7, 14, 21, 100]" aria-label="Select page of users"></mat-paginator> -->

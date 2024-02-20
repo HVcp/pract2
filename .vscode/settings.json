@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/81ec4907-9db6-4d56-86d4-d997209d7be6/resourceGroups/WW-AzureAppDEVTrainees26Jan-RG/providers/Microsoft.Web/sites/HamsiniAirline-Angular",
+    "appService.deploySubpath": "dist"
+}

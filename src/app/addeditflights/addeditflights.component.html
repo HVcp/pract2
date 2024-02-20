@@ -1,0 +1,216 @@
+<div mat-dialog-title>
+    <h1>Add Flight</h1>
+</div>
+<form [formGroup]="flightForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>DepartureAirport</mat-label>
+                <mat-select formControlName="departureAirportLocation" required>
+                    <mat-option *ngFor="let val of AirportLoc" [value]="val">{{val}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="flightForm.get('departureAirportLocation')?.hasError('required')">
+                    Departure Airport is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>ArrivalAirport</mat-label>
+                <mat-select formControlName="arrivalAirportLocation" required>
+                    <mat-option *ngFor="let val of AirportLoc" [value]="val">{{val}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="flightForm.get('arrivalAirportLocation')?.hasError('required')">
+                    Arrival Airport is required
+                </mat-error>
+
+
+                <mat-error *ngIf="flightForm.hasError('sameAirports')">
+                    Departure and Arrival Airports cannot be the same
+                </mat-error>
+
+
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <label for="datetimePicker">Departure DateTime:</label>
+            <input type="datetime-local" id="datetimePicker" name="departureDateTime" formControlName="departureDateTime" required>
+      
+            <label for="datetimePicker">Arrival DateTime:</label>
+            <input type="datetime-local" id="datetimePicker" name="arrivalDateTime" formControlName="arrivalDateTime" required>
+        </div>
+
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>AvailableSeats</mat-label>
+                <input matInput type="number" placeholder="Available Seats" formControlName="availableSeats" max="30"
+                    required>
+                <mat-error *ngIf="flightForm.get('availableSeats')?.hasError('required')">
+                    Available Seats is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>TicketPrice</mat-label>
+                <input matInput type="number" placeholder="Ticket Price" formControlName="ticketPrice" step="0.01"
+                    required>
+                <span matSuffix>₹</span>
+                <mat-error *ngIf="flightForm.get('ticketPrice')?.hasError('required')">
+                    Ticket Price is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="flightForm.invalid">{{data? 'Update':
+            'Save'}}</button>
+    </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>DepartureDateTime</mat-label>
+                <input matInput [matDatepicker]="departurePicker" formControlName="departureDateTime" required>
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="departurePicker"></mat-datepicker-toggle>
+                <mat-datepicker #departurePicker></mat-datepicker>
+                <mat-error *ngIf="flightForm.get('departureDateTime')?.hasError('required')">
+                    Departure Date and Time is required
+                </mat-error>
+            </mat-form-field>
+        </div> -->
+
+        <!-- <div class="row">
+            <label for="datetimePicker">Departure DateTime:</label>
+            <input type="datetime-local" id="datetimePicker" name="departureDateTime" formControlName="departureDateTime" required>
+        </div>
+
+        <div class="row">
+            <label for="datetimePicker">Arrival DateTime:</label>
+            <input type="datetime-local" id="datetimePicker" name="arrivalDateTime" formControlName="arrivalDateTime" required>
+        </div> -->
+          <!-- <button mat-raised-button color="warn" type="button" (click)="data? reset(): empt()">{{data? 'Reset': 'Clear'}}</button> -->
+        <!-- <button mat-raised-button color="primary"  type="submit">{{data? 'Update': 'Save'}}</button> -->

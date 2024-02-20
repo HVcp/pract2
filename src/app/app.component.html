@@ -1,0 +1,160 @@
+
+<body>
+
+<mat-toolbar color="primary">
+  <span routerLink='./'>Airline Application</span>
+  <span class="example-spacer"></span>
+
+  <button mat-raised-button (click)="openAddEditFlightForm()">
+    ADD FLIGHTS
+  </button>
+  
+  <button mat-raised-button routerLink="flightDetails">
+    FLIGHTS DETAILS
+  </button>
+  
+  <button mat-raised-button routerLink="bookingDetails">
+    BOOKING DETAILS
+  </button>
+
+  <button mat-raised-button routerLink="paymentDetails">
+    PAYMENT DETAILS
+  </button>
+</mat-toolbar>
+
+<div class="header">
+  <img src="assets/imgs/airline4.jpg" alt="Airline Logo" class="logo">
+  <h1>Welcome to Airline Ticketing System Admin Login</h1>
+</div>
+<br>
+<br>
+<br>
+
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>
+
+
+<footer>
+  <p>&copy; 2024 Airline Application. All rights reserved.</p>
+</footer>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <br>
+<div align="center" class="airline-container">
+  <img src="assets/imgs/ng5.jpg" alt="Airline" class="airline-image">
+  <h4 class="airline-heading">WinAir</h4>
+</div> -->
+
+<!-- <div class="slideshow-container">
+  <ngx-slick-carousel [config]="slideConfig">
+    <div *ngFor="let image of images">
+      <img src="{{ image }}" alt="Slide Image">
+    </div>
+  </ngx-slick-carousel>
+</div> -->
